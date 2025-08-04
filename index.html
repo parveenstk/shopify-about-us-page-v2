@@ -18,6 +18,20 @@
 </head>
 
 <body>
+   <!-- Toaster Message -->
+   <div class="toaster hide" id="toaster">
+      <div id="timerline" class="timerline"></div>
+      <div class="inner-toaster">
+         <div>
+            <p class="toaster-success" id="toaster-title"></p>
+            <p class="toaster-text" id="toaster-text"></p>
+         </div>
+         <div class="toaster-cross" id="toaster-cross">
+            <img alt="toaster-cross" width="40">
+         </div>
+      </div>
+   </div>
+
    <div id="cart-overlay" class="cart-overlay hide"></div>
    <!--Top-header-->
    <div class="topheader">
@@ -836,12 +850,14 @@
                   <p>Sign up to get the latest on sales, new releases &amp; more </p>
                </div>
                <div class="subscribe-form">
-                  <form class="row g-3">
-                     <div class="col-12 p-0 respo"> <input type="email" class="form-control" id="inputPassword"
+                  <form id="subscribe-desktop-form" class="row g-3">
+                     <div class="col-12 p-0 respo">
+                        <!-- Email Input Desktop -->
+                        <input type="email" class="form-control" id="email-address-desktop" name="Shopify Version - 2"
                            placeholder="Your Email Address">
-                        <div data-lastpass-icon-root=""
-                           style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
-                        </div><button type="submit" class="btn btn-primary mb-3"> <img src="images/email.svg"> </button>
+                        <button type="submit" class="btn btn-primary mb-3">
+                           <img src="images/email.svg">
+                        </button>
                      </div>
                   </form>
                </div>
@@ -966,10 +982,15 @@
                   <p>Sign up to get the latest on sales, new releases &amp; more </p>
                </div>
                <div class="subscribe-form">
-                  <form class="row g-3">
-                     <div class="col-12 p-0 respo"> <input type="email" class="form-control" id="inputPassword2"
-                           placeholder="Your Email Address"> <button type="submit" class="btn btn-primary mb-3"> <img
-                              src="images/email.svg"> </button> </div>
+                  <form id="subscribe-mobile-form" class="row g-3">
+                     <div class="col-12 p-0 respo">
+                        <!-- Email Input Mobile -->
+                        <input type="email" class="form-control" id="email-address-mobile"
+                           placeholder="Your Email Address">
+                        <button type="submit" class="btn btn-primary mb-3">
+                           <img src="images/email.svg">
+                        </button>
+                     </div>
                   </form>
                </div>
             </div>
@@ -982,49 +1003,16 @@
       </div>
    </footer>
 
+   <!-- import scripts -->
    <script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
    <script src='https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.js'></script>
-   <script src="js/script.js"></script>
    <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
    <script src='https://unpkg.com/swiper@6.5.4/swiper-bundle.min.js'></script>
 
-   <!-- import script -->
-   <!-- <script type="text/javascript" src="js/carousel.js"></script> -->
-   <!-- <script src="./js/index.js"></script> -->
-   <!-- <script src="./js/index2.js"></script> -->
-   <!-- <script src="./js/sickyButton.js"></script> -->
-
-   <script>
-      (function () {
-         "use strict";
-         document.addEventListener("DOMContentLoaded", function () {
-            // Initialize Owl Carousel
-            $(".owl-carousel1").owlCarousel({
-               loop: true,
-               center: true,
-               nav: true,
-               margin: 0,
-               responsiveClass: true,
-               responsive: {
-                  0: {
-                     items: 2,
-                     nav: true
-                  },
-                  680: {
-                     items: 2,
-                     nav: true,
-                     loop: false
-                  },
-                  1000: {
-                     items: 5,
-                     nav: true
-                  }
-               }
-            });
-         });
-      })();
-   </script>
+   <!-- import function scripts -->
+   <script src="./js/script.js"></script>
+   <script src="./js/subscription.js"></script>
 
 </body>
 

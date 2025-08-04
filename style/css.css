@@ -54,6 +54,68 @@ p {
 	font-size: 18px;
 }
 
+/* toster CSS */
+.toaster {
+	background-color: #ebfbee;
+	width: 380px;
+	border-radius: 8px;
+	box-shadow: -1px 2px 4px gray;
+	z-index: 9;
+	color: #2c9d45;
+	position: fixed;
+	right: 10px;
+	top: 10px;
+	overflow: hidden;
+	opacity: 0;
+	transform: translateX(100%);
+	animation: slideIn 0.5s ease-out forwards;
+
+	.timerline {
+		width: 100%;
+		height: 8px;
+		transition: width 0.5s linear;
+	}
+
+	.inner-toaster {
+		padding: 12px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.toaster-success {
+		font-weight: 600;
+		margin-bottom: 0px;
+	}
+
+	.toaster-text {
+		font-size: 16px !important;
+		margin-bottom: 0px;
+	}
+
+	.toaster-cross {
+		cursor: pointer;
+	}
+
+	&.hide {
+		animation: slideOut 0.4s ease-in forwards;
+	}
+}
+
+@keyframes slideIn {
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideOut {
+	to {
+		opacity: 0;
+		transform: translateX(100%);
+	}
+}
+
 /*heading*/
 .web-title {
 	margin-bottom: 40px;
@@ -416,7 +478,9 @@ header {
 	padding: 50px 0px 80px;
 }
 
-.banner .container{    max-width: 1320px;}
+.banner .container {
+	max-width: 1320px;
+}
 
 .banner-info h1 {
 	font-size: calc(3.5vw - 0px);
@@ -467,17 +531,39 @@ header {
 	width: 38px;
 }
 
-
-
 /*Next-Menu-baar*/
-.menu-dask-top{text-align: center; display: flex; align-items: center; justify-content: center;}
-.menu-dask-top li{display: inline-block; }
-.menu-dask-top{margin-bottom: 0px;}
+.menu-dask-top {
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
-.menu-dask-top li a{text-transform: uppercase !important; border-radius: 50px; font-size:20px !important; 
-  text-decoration:none !important; color:#000; padding:10px 25px; font-weight: 600;}
-.menu-dask-top li a:hover{background: #FFEB00; }
-.menu-dask-top{padding-left: 0px;}
+.menu-dask-top li {
+	display: inline-block;
+}
+
+.menu-dask-top {
+	margin-bottom: 0px;
+}
+
+.menu-dask-top li a {
+	text-transform: uppercase !important;
+	border-radius: 50px;
+	font-size: 20px !important;
+	text-decoration: none !important;
+	color: #000;
+	padding: 10px 25px;
+	font-weight: 600;
+}
+
+.menu-dask-top li a:hover {
+	background: #FFEB00;
+}
+
+.menu-dask-top {
+	padding-left: 0px;
+}
 
 /*Next-Menu-baar*/
 /*banner*/
@@ -2921,8 +3007,11 @@ p.people {
 
 @media screen and (max-width: 767px) {
 
+	.banner-info h4 {
+		font-size: 20px;
+		text-align: center;
+	}
 
-	.banner-info h4{    font-size: 20px;     text-align: center;}
 	#sticky-btn {
 		position: fixed;
 		left: 50%;
@@ -3156,9 +3245,9 @@ p.people {
 	}
 
 	.banner-info h1 {
-/*		font-size: calc(12.5vw - 0px);*/
+		/*		font-size: calc(12.5vw - 0px);*/
 		text-align: center;
-	margin-bottom: 10px;
+		margin-bottom: 10px;
 	}
 
 	.banner-part {
@@ -3919,8 +4008,6 @@ p.people {
 	.web-title {
 		margin-bottom: 0px;
 	}
-
-	.hunger {}
 
 	.wellness {
 		padding: 20px 0;
